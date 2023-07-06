@@ -35,7 +35,7 @@
 }
 
 body {
-    background-color: #f0f0f0;;
+  background-color: #f0f0f0;
 }
 
 label {
@@ -55,22 +55,13 @@ input:focus {
   outline: 1px solid hsl(259, 100%, 65%);
 }
 
-#calc-Btn {
-  left: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-}
-
 hr {
   border-top: 1px solid rgb(240, 238, 238);
 }
 
 /* troublshooting css */
 
-
 blockquote {
-  
-
   color: #dbdbdb;
 }
 
