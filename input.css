@@ -1,3 +1,80 @@
-@tailwind base
-@tailwind components
-@tailwind utilities
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "Poppins";
+    src: url(../assets/fonts/Poppins-Regular.ttf) format("truetype");
+    font-weight: 400;
+  }
+  @font-face {
+    font-family: "Poppins";
+    src: url(../assets/fonts/Poppins-Italic.ttf) format("truetype");
+    font-weight: 400;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: "Poppins";
+    src: url(../assets/fonts/Poppins-BoldItalic.ttf) format("truetype");
+    font-weight: 700;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: "Poppins";
+    src: url(../assets/fonts/Poppins-Bold.ttf) format("truetype");
+    font-weight: 700;
+  }
+  @font-face {
+    font-family: "Poppins";
+    src: url(../assets/fonts/Poppins-ExtraBoldItalic.ttf) format("truetype");
+    font-weight: 800;
+    font-style: italic;
+  }
+}
+
+body {
+    background-color: #f0f0f0;;
+}
+
+label {
+  color: #716f6f;
+  font-size: 12px;
+}
+
+input {
+  color: #141414;
+  width: 90px;
+  border: 1px solid rgb(223, 223, 223);
+  border-radius: 8px;
+  padding: 0.8em 0;
+}
+
+input:focus {
+  outline: 1px solid hsl(259, 100%, 65%);
+}
+
+/* troublshooting css */
+
+
+
+blockquote {
+  
+
+  color: #dbdbdb;
+}
+
+/*Hide Arrows From Input Number */
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
