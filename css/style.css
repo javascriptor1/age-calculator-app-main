@@ -568,12 +568,32 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.absolute {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
+}
+
+.top-1\/2 {
+  top: 50%;
+}
+
+.mb-12 {
+  margin-bottom: 3rem;
+}
+
 .mb-4 {
   margin-bottom: 1rem;
 }
 
 .mb-8 {
   margin-bottom: 2rem;
+}
+
+.mt-8 {
+  margin-top: 2rem;
 }
 
 .flex {
@@ -584,16 +604,20 @@ video {
   display: grid;
 }
 
-.h-\[40px\] {
-  height: 40px;
+.h-\[45px\] {
+  height: 45px;
 }
 
 .min-h-screen {
   min-height: 100vh;
 }
 
-.w-\[40px\] {
-  width: 40px;
+.w-\[45px\] {
+  width: 45px;
+}
+
+.w-full {
+  width: 100%;
 }
 
 .max-w-\[320px\] {
@@ -626,6 +650,14 @@ video {
 
 .rounded-full {
   border-radius: 9999px;
+}
+
+.border {
+  border-width: 1px;
+}
+
+.border-solid {
+  border-style: solid;
 }
 
 .bg-Purple {
@@ -681,11 +713,20 @@ input {
   width: 90px;
   border: 1px solid rgb(223, 223, 223);
   border-radius: 8px;
-  padding: 0.8em 0;
+  padding: 0.8em 0.3em;
 }
 
 input:focus {
   outline: 1px solid hsl(259, 100%, 65%);
+}
+
+#calc-Btn {
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+hr {
+  border-top: 1px solid rgb(240, 238, 238);
 }
 
 /* troublshooting css */
@@ -708,6 +749,10 @@ input::-webkit-inner-spin-button {
 
 input[type="number"] {
   -moz-appearance: textfield;
+}
+
+.hover\:cursor-pointer:hover {
+  cursor: pointer;
 }
 
 .hover\:bg-black:hover {

@@ -7,26 +7,35 @@ const resultYears = document.querySelector("#result-years");
 const resultMonths = document.querySelector("#result-months");
 const resultDays = document.querySelector("#result-days");
 const dateObject = new Date();
-let currentYear =  dateObject.getFullYear();
+let currentYear = dateObject.getFullYear();
+let dayMonthCheck = undefined;
 
-dayInput.addEventListener("change", () => {
+dayInput.addEventListener("change", function () {
   const dayInputValue = document.querySelector("#day").value;
-  const monthInputValue = document.querySelector("#month").value;
-  const yearInputValue = document.querySelector("#year").value;
-
-  if (dayInputValue > 31) {
-    alert("not valid day");
+  if (+dayInputValue > 31 || +dayInputValue <= 0 || dayInputValue === isNaN) {
+    alert(`${dayInputValue} is not valid day`);
   } else {
     resultDays.textContent = dayInputValue;
+    dayMonthCheck = +dayInputValue;
+    alert(dayMonthCheck);
   }
-  if (monthInputValue > 12) {
+});
+
+monthInput.addEventListener("change", function () {
+  const monthInputValue = document.querySelector("#month").value;
+  if (+monthInputValue > 12 || +monthInputValue <= 0) {
     alert("not valid month");
   } else {
     resultMonths.textContent = monthInputValue;
+    alert(dayMonthCheck + "from winthin month");
   }
-  if (yearInputValue > currentYear) {
-    alert("year not valid 🛑");
+});
+
+yearInput.addEventListener("change", function () {
+  const yearInputValue = document.querySelector("#year").value;
+  if (+yearInputValue > currentYear) {
+    alert("not valid year");
   } else {
-    resultYears.textContent = dayInputValue;
+    resultYears.textContent = currentYear - yearInputValue;
   }
 });
