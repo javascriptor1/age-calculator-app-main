@@ -38,7 +38,7 @@
               </div>
               <div class="flex flex-col items-start">
                 <div><label for="month">MONTH</label></div>
-                <input type="number" name="month" id="month" />
+                <input type="number" name="month" id="month" min="1" max="31" />
               </div>
               <div class="flex flex-col items-start">
                 <div><label for="year">YEAR</label></div>
@@ -69,9 +69,9 @@
       </div>
       <!-- result div here  -->
       <div class="flex flex-col text-black font-extrabold italic text-[3rem]">
-        <p><span class="text-Purple">--</span> years</p>
-        <p><span class="text-Purple">--</span> months</p>
-        <p><span class="text-Purple">--</span> days</p>
+        <p><span class="text-Purple" id="result-years">--</span > years</p>
+        <p><span class="text-Purple" id="result-months">--</span > months</p>
+        <p><span class="text-Purple" id="result-days">--</span > days</p>
       </div>
     </main>
 
