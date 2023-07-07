@@ -604,6 +604,10 @@ video {
   display: grid;
 }
 
+.hidden {
+  display: none;
+}
+
 .h-\[45px\] {
   height: 45px;
 }
