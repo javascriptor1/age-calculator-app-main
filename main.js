@@ -1,11 +1,17 @@
 "use strict";
 
+// get calculations button
 const calcButton = document.querySelector("#calc-btn");
 
 // get all 3 input fields
 const dayInput = document.querySelector("#day");
 const monthInput = document.querySelector("#month");
 const yearInput = document.querySelector("#year");
+
+// Assign 3 input fields status to make sure all fields are valid when writting to results elements.
+let dayInputStatus = false;
+let monthInputStatus = false;
+let yearInputStatus = false;
 
 // get all 3 labels
 const dayLabel = document.querySelector("#label-day");
@@ -38,7 +44,7 @@ calcButton.addEventListener("click", function () {
   const yearInputValue = document.querySelector("#year").value;
 
   // First , find max allowed days in a month for the input month by user. For example , if user enter April ,
-  // then day 30 is maximum allow day.  We call the function findMaxDayInMonth then assign its return value to 
+  // then day 30 is maximum allow day.  We call the function findMaxDayInMonth then assign its return value to
   // maxDayInMonth variable so we can access this variable from anywhere in our code
 
   maxDayInMonth = findMaxDayInMonth(monthInputValue, yearInputValue);
@@ -48,7 +54,20 @@ calcButton.addEventListener("click", function () {
   validateDayInput(dayInputValue);
   validateMonthInput(monthInputValue);
   validateYearInput(yearInputValue);
+
+  if (dayInputStatus && monthInputStatus && yearInputStatus) {
+    let userFullDate = new Date(
+      `${monthInputValue}-${dayInputValue}-${yearInputValue}`
+    );
+    alert("do calculatons here");
+  } else {
+    return;
+  }
 });
+
+/*
+    ================================ Below are functions used in the program ==============================
+*/
 
 // function to change day input and label element when value is not valid
 function errorColorLabelInputDay() {
@@ -77,6 +96,7 @@ function validateDayInput(dayInputValue) {
   if (dayInputValue === "") {
     errorColorLabelInputDay();
     dayErrorMessage.textContent = "This field is required";
+    dayInputStatus = false;
   } else if (
     +dayInputValue > 31 ||
     +dayInputValue <= 0 ||
@@ -84,10 +104,12 @@ function validateDayInput(dayInputValue) {
   ) {
     errorColorLabelInputDay();
     dayErrorMessage.textContent = "Must be a valid day";
+    dayInputStatus = false;
   } else {
     dayErrorMessage.textContent = "";
     dayInput.classList.remove("invalid");
     dayLabel.classList.remove("invalid-label");
+    dayInputStatus = true;
   }
 }
 
@@ -97,14 +119,17 @@ function validateMonthInput(monthInputValue) {
   if (monthInputValue === "") {
     errorColorLabelInputMonth();
     monthErrorMessage.textContent = "This field is required";
+    monthInputStatus = false;
   } else if (+monthInputValue > 12 || +monthInputValue <= 0) {
     errorColorLabelInputMonth();
     monthErrorMessage.classList.remove("hidden");
     monthErrorMessage.textContent = "Must be a valid month";
+    monthInputStatus = false;
   } else {
     monthErrorMessage.textContent = "";
     monthInput.classList.remove("invalid");
     monthLabel.classList.remove("invalid-label");
+    monthInputStatus = true;
   }
 }
 
@@ -114,13 +139,16 @@ function validateYearInput(yearInputValue) {
   if (yearInputValue === "") {
     errorColorLabelInputYear();
     yearErrorMessage.textContent = "This field is required";
+    yearInputStatus = false;
   } else if (+yearInputValue > currentYear || +yearInputValue <= 0) {
     errorColorLabelInputYear();
     yearErrorMessage.classList.remove("hidden");
     yearErrorMessage.textContent = "Must be a valid year";
+    yearInputStatus = false;
   } else {
     yearErrorMessage.textContent = "";
     yearInput.classList.remove("invalid");
     yearLabel.classList.remove("invalid-label");
+    yearInputStatus = true;
   }
 }
