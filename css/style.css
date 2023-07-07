@@ -435,7 +435,7 @@ video {
 
   src: url(../assets/fonts/Poppins-Italic.ttf) format("truetype");
 
-  font-weight: 400;
+  font-weight: 300;
 
   font-style: italic;
 }
@@ -592,10 +592,6 @@ video {
   margin-bottom: 1rem;
 }
 
-.mb-8 {
-  margin-bottom: 2rem;
-}
-
 .mt-8 {
   margin-top: 2rem;
 }
@@ -687,12 +683,20 @@ video {
   padding: 1.5rem;
 }
 
+.pt-1 {
+  padding-top: 0.25rem;
+}
+
 .font-Poppins {
   font-family: 'Poppins' ,sans-serif;
 }
 
 .text-\[3rem\] {
   font-size: 3rem;
+}
+
+.text-\[8px\] {
+  font-size: 8px;
 }
 
 .font-bold {
@@ -705,6 +709,11 @@ video {
 
 .italic {
   font-style: italic;
+}
+
+.text-Lightred {
+  --tw-text-opacity: 1;
+  color: hsl(0 100% 67% / var(--tw-text-opacity));
 }
 
 .text-Purple {
@@ -731,21 +740,24 @@ input {
   width: 90px;
   border: 1px solid rgb(223, 223, 223);
   border-radius: 8px;
-  padding: 0.8em 0.3em;
+  padding: 0.8em 0.5em;
 }
 
-input:focus {
+input:focus,
+input:hover {
   outline: 1px solid hsl(259, 100%, 65%);
+}
+
+.invalid {
+  outline: 1px solid hsl(0, 100%, 67%);
+}
+
+.invalid-label {
+  color: hsl(0, 100%, 67%);
 }
 
 hr {
   border-top: 1px solid rgb(240, 238, 238);
-}
-
-/* troublshooting css */
-
-blockquote {
-  color: #dbdbdb;
 }
 
 /*Hide Arrows From Input Number */
@@ -764,6 +776,16 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
+/* troublshooting css */
+
+blockquote {
+  color: #dbdbdb;
+}
+
+main {
+  border: 2px solid red;
+}
+
 .hover\:cursor-pointer:hover {
   cursor: pointer;
 }
@@ -771,4 +793,23 @@ input[type="number"] {
 .hover\:bg-black:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+}
+
+@media (min-width: 768px) {
+  .md\:w-\[120px\] {
+    width: 120px;
+  }
+
+  .md\:min-w-\[500px\] {
+    min-width: 500px;
+  }
+
+  .md\:text-xs {
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+
+  .md\:font-light {
+    font-weight: 300;
+  }
 }
