@@ -1,6 +1,6 @@
 "use strict";
 
-import { DateTime } from "./node_modules/luxon/src/luxon.js";
+import { DateTime } from "../node_modules/luxon/src/luxon.js";
 
 // get calculations button
 const calcButton = document.querySelector("#calc-btn");
