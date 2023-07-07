@@ -80,13 +80,3 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 }
-
-/* troublshooting css */
-
-blockquote {
-  color: #dbdbdb;
-}
-
-main {
-  border: 2px solid red;
-}

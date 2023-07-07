@@ -1,5 +1,7 @@
 "use strict";
 
+import { DateTime } from "./node_modules/luxon/src/luxon.js";
+
 // get calculations button
 const calcButton = document.querySelector("#calc-btn");
 
@@ -31,8 +33,8 @@ const resultDays = document.querySelector("#result-days");
 // get current date ex. 7-7-2023
 const dateObject = new Date();
 let currentYear = dateObject.getFullYear();
-let currentMonth = dateObject.getMonth() + 1;
-let currentDay = dateObject.getDate();
+// let currentMonth = dateObject.getMonth() + 1;
+// let currentDay = dateObject.getDate();
 
 // Max day in a month global variabl
 let maxDayInMonth;
@@ -56,10 +58,17 @@ calcButton.addEventListener("click", function () {
   validateYearInput(yearInputValue);
 
   if (dayInputStatus && monthInputStatus && yearInputStatus) {
-    let userFullDate = new Date(
-      `${monthInputValue}-${dayInputValue}-${yearInputValue}`
-    );
-    alert("do calculatons here");
+    let finalResuls = DateTime.now().diff(
+      DateTime.local(+yearInputValue, +monthInputValue, +dayInputValue),
+      ["years", "months", "days"]
+    ).values;
+    // Remove fractions from days
+    finalResuls.days = Math.trunc(finalResuls.days);
+
+    // display final results on the DOM
+    resultYears.textContent = finalResuls.years;
+    resultMonths.textContent = finalResuls.months;
+    resultDays.textContent = finalResuls.days;
   } else {
     return;
   }
