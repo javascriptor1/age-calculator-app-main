@@ -3,7 +3,6 @@
 ## Please do not remove line 5 - thanks! 🙂 ##
 ###############################################
 *.sketch
-node_modules
 .netlify
 .vscode
 netlify.toml
